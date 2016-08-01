@@ -33,46 +33,22 @@
     </div>
   </div>
   <!-- cards -->
+
   <div class="wrapper-grey padding-20">
     <div class="container-fluid">
       <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <div class="card">
-                <img src="http://unsplash.it/433/250">
-
-
-                <!--<img src="http://placehold.it/25x25" class= "card"-->
-                <div class="card-category">City</div>
-                <div class="card-description">
-                  <h2>Card number 1</h2>
-                  <p>Very cool stuff, useful and smart</p>
-                </div>
-                <!--<img class="card-user avatar" src="user.jpg">-->
-                <!--<a class="card-link" href="#" ></a> -->
-              </div>
-            </div>
-
+        <% data.flats.each do |city, details| %>
           <div class="col-xs-12 col-sm-4">
-              <div class="card">
-                <img src="http://unsplash.it/433/250">
-                <div class="card-category">City</div>
+          <% link_to "city/#{city}.html", class: "card" do %>
+              <%= image_tag "http://unsplash.it/433/250" %>
+                <div class="card-category"><%= details.city %></div>
                 <div class="card-description">
-                  <h2>Card number 2</h2>
-                  <p>Very cool stuff, useful and smart</p>
+                  <h2><%= details.type %> </h2>
+                  <p> <%= details.summary %> </p>
                 </div>
-              </div>
+                <% end %>
           </div>
-
-          <div class="col-xs-12 col-sm-4">
-              <div class="card">
-              <img src="http://unsplash.it/433/250">
-                <div class="card-category">City</div>
-                <div class="card-description">
-                  <h2>Card number 3</h2>
-                  <p>Very cool stuff, useful and smart</p>
-                </div>
-              </div>
-          </div>
+        <% end %>
         </div>
       </div>
     </div>
@@ -94,10 +70,10 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <script type="text/javascript">
-var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
+var myLatlng = new google.maps.LatLng(48.853561, 2.338960);
 
 var myOptions = {
-  zoom: 16,
+  zoom: 20,
   center: myLatlng,
   scrollwheel: false,
   mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -108,12 +84,6 @@ var map = new google.maps.Map(document.getElementById('map'), myOptions);
 var marker = new google.maps.Marker({
   position: myLatlng,
   map: map,
-  title: "You are here!"
+  title: "Hotel St. André Des Artes"
 });
 </script>
-
-
-
-  <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

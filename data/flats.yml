@@ -1,0 +1,17 @@
+nyc:
+  city: NYC
+  type: Studio apt.
+  summary: Lower East Side together with the locals.
+  wifi: true
+
+copenhagen:
+  city: Copenhagen
+  type: Nice flat in Piccadilly
+  summary: I guess this is a cool place to be. I don't know.
+  wifi: false
+
+paris:
+  city: Paris
+  type: Charming room in Montmartre
+  summary: Some cool places to hang out are here.
+  wifi: true

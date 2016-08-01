@@ -1,3 +1,7 @@
+data.flats.each do |key, city|
+  proxy "/city/#{key}.html", "/city/show.html", :locals => { :city => key }, :ignore => true
+end
+
 ###
 # Compass
 ###
